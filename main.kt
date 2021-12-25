@@ -132,9 +132,6 @@ class LinearFractal(
         // Transform the array of Points representing the generator into an array
         // of points defining a segment of the next layer of the fractal.
         // F(G) = S or G * F = S, * meaning transformation or convolution of a sort.
-
-        // I'm overwriting the generator because cloning points is copying the 
-        // references to the points, not the points themselves
         val nextFractalSegmentPoints = generator.copyPoints()
         print("Generator points for initial next fractal layer points: ")
         for (point in nextFractalSegmentPoints) {
