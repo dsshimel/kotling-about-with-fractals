@@ -143,6 +143,10 @@ class LinearFractal(
         println()
 
         val deltaXFractal = fractalSegment.end.x - fractalSegment.start.x
+        if (deltaXFractal <= 0) {
+          // The segment is infinitely narrow, so we can't fractallize it.
+          continue
+        }
         val xDisplacementFractal = fractalSegment.start.x
         // Ranges between [-1.0, 1.0] because the max point Y value is 0.5 in either direction.
         val deltaYFractal = fractalSegment.end.y - fractalSegment.start.y
